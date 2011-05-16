@@ -1,0 +1,144 @@
+body {
+  background-color: #4B7399;
+  font-family: Verdana, Helvetica, Arial;
+  font-size: 14px;
+}
+
+a img {
+  border: none;
+}
+
+a {
+  color: #2d2884;
+  text-decoration:none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+#container {
+  width: 75%;
+  margin: 0 auto;
+  background-color: #FFF;
+  padding: 20px 40px;
+  border: solid 1px black;
+  margin-top: 20px;
+}
+
+#flash_notice, #flash_error, #flash_alert {
+  padding: 5px 8px;
+  margin: 10px 0;
+}
+
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+
+#flash_error, #flash_alert {
+  background-color: #FCC;
+  border: solid 1px #C66;
+}
+
+.fieldWithErrors {
+  display: inline;
+}
+
+.error_messages {
+  width: 400px;
+  border: 2px solid #CF0000;
+  padding: 0px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  font-size: 12px;
+}
+
+.error_messages h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 10px;
+  font-size: 12px;
+  margin: 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+.error_messages p {
+  margin: 8px 10px;
+}
+
+.error_messages ul {
+  margin: 0;
+}
+table {
+    border-collapse: collapse;
+}
+#scoreboard th {
+	background: url(/images/cell_yellow.jpg) repeat-x top left #ffcf00;
+}
+table td, table th{
+    padding:10px;
+    border: none;
+}
+table tr:nth-child(even){
+    background: url(/images/cell_grey.jpg) repeat-x top left #c1c1c1;
+	
+}
+table tr:nth-child(odd){
+    background: #eee;
+	background: url(/images/cell_grey.jpg) repeat-x top left #c1c1c1;
+}
+table#scoreboard th.headerSortUp, table#scoreboard th.headerSortDown { 
+	background: url(/images/cell_blue.jpg) repeat-x top left #00ade4;
+} 
+
+#scoreboard td {
+	width: 50px;
+    -moz-text-shadow: 0px 1px 1px rgba(255,255,255,0.5);
+	-webkit-text-shadow: 0px 1px 1px rgba(255,255,255,0.5); 
+	text-shadow: 0px 1px 1px rgba(255,255,255,0.5); 
+	color: #333;
+	text-align: center
+}
+tr.totals td {
+	color: #fff;
+	font-weight: bold;
+}
+tr.red td {
+	background: url(/images/cell_red.jpg) repeat-x top left #cd1b1b !important;
+}
+tr.green td {
+	background: url(/images/cell_green.jpg) repeat-x top center #84cd1b !important;
+	color: #5e7500;
+}
+#scoreboard td.user_name {
+	text-align: left;
+}
+a.medal {
+	display: block;
+	width: 32px;
+	height: 32px;
+	background-image: url(/images/medals.png);
+	background-repeat: no-repeat;
+	margin: 0 auto;
+}
+a.gold {
+	background: url(/images/medals.png) no-repeat 0 0;
+}
+a.silver {
+	background: url(/images/medals.png) no-repeat -32px -32px;
+}
+a.bronze {
+	background: url(/images/medals.png) no-repeat -64px -64px;
+}
+a.crap {
+	background: url(/images/medals.png) no-repeat -96px -96px;
+}

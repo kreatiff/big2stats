@@ -1,0 +1,13 @@
+one:
+  name: MyString
+  first_place: 1
+  second_place: 1
+  third_place: 1
+  fourth_place: 1
+
+two:
+  name: MyString
+  first_place: 1
+  second_place: 1
+  third_place: 1
+  fourth_place: 1

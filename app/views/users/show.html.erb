@@ -1,0 +1,28 @@
+<% title "User" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+<p>
+  <strong>First Place:</strong>
+  <%= @user.first_place %>
+</p>
+<p>
+  <strong>Second Place:</strong>
+  <%= @user.second_place %>
+</p>
+<p>
+  <strong>Third Place:</strong>
+  <%= @user.third_place %>
+</p>
+<p>
+  <strong>Fourth Place:</strong>
+  <%= @user.fourth_place %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_user_path(@user) %> |
+  <%= link_to "Destroy", @user, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", users_path %>
+</p>

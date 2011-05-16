@@ -1,0 +1,1 @@
+set HTTP_PROXY=oxest0:As19r79f@10.1.18.201:8080

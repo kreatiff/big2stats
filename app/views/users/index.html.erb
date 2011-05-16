@@ -1,0 +1,63 @@
+<% title "Users" %>
+
+<table id="scoreboard" class="tablesorter">
+  <thead>
+  <tr>
+    <th><a href="#">Name</a></th>
+    <th><a href="#" class="medal gold"> </a></th>
+    <th><a href="#" class="medal silver"> </a></th>
+    <th><a href="#" class="medal bronze"> </a></th>
+    <th><a href="#" class="medal crap"> </a></th>
+	<th><a href="#">Games</a></th>
+	<th><a href="#">Points</a></th>
+	<th><a href="#">PPG</a></th>
+  </tr>
+  </thead>
+  <tbody>
+	<% total_games = 0 %>
+	<% total_first = 0 %>
+	<% total_second = 0 %>
+	<% total_third = 0 %>
+	<% total_fourth = 0 %>
+  <% for user in @users %> 
+    <tr>
+      <td class="user_name"><%= link_to user.name, edit_user_path(user) %></td>
+      <td><%= user.first_place %></td>
+      <td><%= user.second_place %></td>
+      <td><%= user.third_place %></td>
+      <td><%= user.fourth_place %></td>
+	  <td><%= games=user.first_place+user.second_place+user.third_place+user.fourth_place %>
+	  <td><%= points=user.first_place*9+user.second_place*6+user.third_place*3+user.fourth_place*0 %>
+		  <% if games!=0 %>
+		  <% ppg = points.to_f/games.to_f %>
+			<td><%= ppg.round(2)%></td>
+		  <% else %>
+			<td>0</td>
+		  <% end %>
+	<% link_to "Show", user %>
+    <% link_to "Edit", edit_user_path(user) %>
+    <% link_to "Destroy", user, :confirm => 'Are you sure?', :method => :delete %>
+    </tr>
+	<% total_first = total_first + user.first_place %>
+	<% total_second = total_second + user.second_place %>
+	<% total_third = total_third + user.third_place %>
+	<% total_fourth = total_fourth + user.fourth_place %>
+	<% total_games = total_games + games %>  
+  <% end %>
+  </tbody>
+	<% if (total_first == total_second) && (total_first == total_third) && (total_first == total_fourth) %>
+		<tr class="totals green">
+	<% else %>
+		<tr class="totals red">
+	<% end %>
+		<td>Totals: </td>
+		<td><%= total_first %></td>
+		<td><%= total_second %></td>
+		<td><%= total_third %></td>
+		<td><%= total_fourth %></td>
+		<td colspan="3"></td>
+	</tr>
+	
+</table>
+
+<p><%= link_to "New User", new_user_path %></p>
