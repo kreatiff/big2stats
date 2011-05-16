@@ -1,0 +1,27 @@
+<% content_for :title do %>  
+  Update Scores
+<% end %>  
+
+  
+<%= form_tag update_individual_users_path, :method => :put do %>
+<table id="scoreboard">
+<thead>
+  <tr>
+    <th><a href="">Name</a></th>
+    <th><a href="" class="medal gold"> </a></th>
+    <th><a href="" class="medal silver"> </a></th>
+    <th><a href="" class="medal bronze"> </a></th>
+    <th><a href="" class="medal crap"> </a></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% for user in @users %>  
+    <%= fields_for "users[]", user do |f| %>  
+      <%= render "fields", :f => f %>  
+    <% end %>  
+  <% end %>  
+  </tbody>
+	
+</table>
+  <p><%= submit_tag "Submit" %></p>  
+<% end %> 
