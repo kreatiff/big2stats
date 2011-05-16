@@ -31,6 +31,7 @@ class UsersController < ApplicationController
     else
       render :action => 'edit'
     end
+	
   end
 
   def destroy
@@ -38,4 +39,13 @@ class UsersController < ApplicationController
     @user.destroy
     redirect_to users_url, :notice => "Successfully destroyed user."
   end
+  	def edit_individual  
+	  @users = User.find(params[:user_ids])  
+	end  
+	  
+	def update_individual  
+	  User.update(params[:users].keys, params[:users].values)  
+	  flash[:notice] = "Users updated"  
+	  redirect_to users_url  
+	end   
 end
