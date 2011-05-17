@@ -1,5 +1,5 @@
 <% title "Users" %>
-<% form_tag edit_individual_users_path do %>  
+<% form_tag (edit_individual_users_path), :id => 'edit_users' do  %>  
 <table id="scoreboard" class="tablesorter">
   <thead>
   <tr>
@@ -37,7 +37,7 @@
 	<% link_to "Show", user %>
     <% link_to "Edit", edit_user_path(user) %>
     <% link_to "Destroy", user, :confirm => 'Are you sure?', :method => :delete %>
-	<td><%= check_box_tag "user_ids[]", user.id %></td>
+	<td><%= check_box_tag 'user_ids[]', user.id, false, {:id => 'user_id_'+user.id.to_s} %></td>
     </tr>
 	<% total_first = total_first + user.first_place %>
 	<% total_second = total_second + user.second_place %>

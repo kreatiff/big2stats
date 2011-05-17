@@ -41,6 +41,10 @@ class UsersController < ApplicationController
   end
   	def edit_individual  
 	  @users = User.find(params[:user_ids])  
+	  if !@users 
+		flash[:notice] = "No users selected"  
+		redirect_to users_url
+	  end
 	end  
 	  
 	def update_individual  
