@@ -1,5 +1,7 @@
 Big2stats::Application.routes.draw do  
 
+  devise_for :admins
+
 resources :users do  
   collection do  
     post :edit_individual  

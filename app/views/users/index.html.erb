@@ -11,6 +11,7 @@
 	<th><a href="#">Games</a></th>
 	<th><a href="#">Points</a></th>
 	<th><a href="#">PPG</a></th>
+	<td class="">UPDATE</td>
   </tr>
   </thead>
   <tbody>
@@ -37,7 +38,7 @@
 	<% link_to "Show", user %>
     <% link_to "Edit", edit_user_path(user) %>
     <% link_to "Destroy", user, :confirm => 'Are you sure?', :method => :delete %>
-	<td><%= check_box_tag 'user_ids[]', user.id, false, {:id => 'user_id_'+user.id.to_s} %></td>
+	<td><span class="checkbox"><%= check_box_tag 'user_ids[]', user.id, false, {:id => 'user_id_'+user.id.to_s} %></span></td>
     </tr>
 	<% total_first = total_first + user.first_place %>
 	<% total_second = total_second + user.second_place %>
@@ -57,7 +58,7 @@
 		<td><%= total_third %></td>
 		<td><%= total_fourth %></td>
 		<td colspan="3"></td>
-		<td><%= submit_tag "Edit" , :class => "edit_btn"%></td>
+		<td><%= submit_tag "Edit" %></td>
 	</tr>
 	
 </table>

@@ -2,20 +2,36 @@
 // This file is automatically included by javascript_include_tag :defaults
 $(document).ready(function() 
     {
-		$(".edit_btn").button();
-		$("#scoreboard").tablesorter( {sortList: [[7,0]]} ); 
-
-		$("#edit_users").submit(function(e) {
-			for(i=1; i<9; i++) {
-				if($("#user_id_"+i).is(':checked') {
-					return true;
-					alert('true');
-				}else{
-					alert('false');
-					e.preventDefault();
-					return false;
-				}
-			};
+	$('input:checkbox').removeAttr('checked');
+			$("#edit_users").submit(function(e) {
+			if(!$('input[type=checkbox]:checked').length) {
+				//stop the form from submitting
+				e.preventDefault();
+				alert("Please select at least one to update.");
+			}
+			return true;
 		});
-	} 
-); 
+	$("input[type=submit]").addClass("button");
+	$(".button").button();
+	$("#scoreboard").tablesorter( {sortList: [[7,0]]} );
+	
+	$("span[class='checkbox']").addClass("unchecked");
+
+	$(".checkbox").click(function(){
+
+		if($(this).children("input").attr("checked")){
+			// uncheck
+			$(this).children("input").attr({checked: ""});
+			$(this).removeClass("checked");
+			$(this).addClass("unchecked");
+		}else{
+			// check
+			$(this).children("input").attr({checked: "checked"});
+			$(this).removeClass("unchecked");
+			$(this).addClass("checked");
+		}
+
+		//alert($(this).children("input").attr("checked"));
+	});
+	
+	}); 

@@ -1,11 +1,20 @@
 <% form_for @user do |f| %>  
-
-	  <%= f.label :name %>
-	  <%= f.text_field :name, :size => '15' %><br />
-	  <%= f.text_field :first_place, :size => '5' %><br />
-	  <%= f.text_field :second_place, :size => '5' %><br />
-	  <%= f.text_field :third_place, :size => '5' %><br />
-	  <%= f.text_field :fourth_place, :size => '5' %><br />
+ <% if @user.errors.any? %>  
+  <div id="flash_error">  
+    <h3><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h3>  
+    <ul>  
+    <% @user.errors.full_messages.each do |msg| %>  
+      <li><%= msg %></li>  
+    <% end %>  
+    </ul>  
+  </div>  
+  <% end %>  
+  
+	  <%= f.text_field :name, :size => '15', :placeholder=>"Name" %><br />
+	  <%= f.text_field :first_place, :size => '15', :placeholder=>"First Place" %><br />
+	  <%= f.text_field :second_place, :size => '15', :placeholder=>"Second Place" %><br />
+	  <%= f.text_field :third_place, :size => '15', :placeholder=>"Third Place" %><br />
+	  <%= f.text_field :fourth_place, :size => '15', :placeholder=>"Fourth Place" %><br />
 
 	<p><%= f.submit "Submit" %></p>  
 <% end %>  
