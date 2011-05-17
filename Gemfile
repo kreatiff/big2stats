@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'nifty-generators'
 gem 'mocha'
 gem 'jquery-rails', '>= 0.2.6'
+gem 'taps'
 
 # Use unicorn as the web server
 # gem 'unicorn'
