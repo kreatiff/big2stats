@@ -1,8 +1,11 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
+window.onunload = function(){}; 
 $(document).ready(function() 
     {
-	$('input:checkbox').removeAttr('checked');
+	//alert('test');
+	user_ids = 0;
+	$('#edit_users')[0].reset();
 			$("#edit_users").submit(function(e) {
 			if(!$('input[type=checkbox]:checked').length) {
 				//stop the form from submitting
